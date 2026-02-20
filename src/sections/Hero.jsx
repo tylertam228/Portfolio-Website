@@ -58,7 +58,9 @@
     { name: "Godot", icon: `${DEVICON}/godot/godot-original.svg` },
     { name: "Supabase", icon: `${DEVICON}/supabase/supabase-original.svg` },
     { name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
-    { name: "Java", icon: `${DEVICON}/java/java-original.svg` }
+    { name: "Java", icon: `${DEVICON}/java/java-original.svg` },
+    { name: "Boostrap", icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
+    { name: "Flask", icon: `${DEVICON}/flask/flask-original.svg` },
   ];
 
   const SPEECH_LINES = [
