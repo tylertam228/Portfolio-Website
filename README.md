@@ -1,6 +1,6 @@
 # tiger228.tyhstudio.com
 
-Personal portfolio website for Tiger228 (Tyler Tam).
+Personal portfolio website for Tiger228.
 
 ## Tech Stack
 
