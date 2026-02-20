@@ -7,6 +7,7 @@
     Linkedin,
     Instagram,
     Coffee,
+    MessageCircle,
   } from "lucide-react";
   import tigerGif from "@/assets/Tiger_Animation.gif";
 
@@ -290,6 +291,17 @@
                 alt="Tiger228 animation"
                 className="relative h-64 w-64 rounded-2xl object-contain sm:h-80 sm:w-80 lg:h-96 lg:w-96"
               />
+
+              {/* AI Chatbox hint */}
+              <a
+                href="https://ai.tyhstudio.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute -bottom-12 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-2 text-xs text-cyan-400 backdrop-blur-sm transition-all hover:border-cyan-500/40 hover:bg-cyan-500/10 whitespace-nowrap"
+              >
+                <MessageCircle size={14} />
+                Got any questions for my human? Ask me!
+              </a>
             </div>
           </motion.div>
         </div>
