@@ -183,15 +183,10 @@ export const Projects = () => {
             <Rocket size={16} className="opacity-70" />
             Projects
           </span>
+          <p className="mt-3 text-sm tracking-wide text-gray-500">
+            Here are some of the projects I have worked on
+          </p>
         </motion.div>
-
-        <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
-          <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
-            <p className="mb-4 text-center text-xl font-medium tracking-widest text-gray-500 uppercase">
-              Here are some of the projects I have worked on
-            </p>
-          </div>
-        </div>
 
         {/* 3D Carousel */}
         <div className="relative mx-auto" style={{ perspective: "1200px" }}>
