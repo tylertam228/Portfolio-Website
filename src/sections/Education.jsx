@@ -1,3 +1,3 @@
 export const Education = () => {
-    return <section></section>;
+    return <section id="education"></section>;
 };

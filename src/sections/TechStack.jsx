@@ -1,3 +1,3 @@
 export const TechStack = () => {
-    return <section></section>;
+    return <section id="tech-stack"></section>;
 };

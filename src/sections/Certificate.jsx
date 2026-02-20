@@ -1,3 +1,3 @@
 export const Certificate = () => {
-    return <section></section>;
+    return <section id="certificate"></section>;
 };

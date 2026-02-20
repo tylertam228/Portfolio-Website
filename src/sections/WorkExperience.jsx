@@ -1,3 +1,3 @@
 export const WorkExperience = () => {
-    return <section></section>;
+    return <section id="work-experience"></section>;
 };
