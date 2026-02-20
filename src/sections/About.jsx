@@ -50,17 +50,6 @@ export const About = () => {
             </motion.p>
 
             <motion.p
-              {...fadeUp(0.15)}
-              className="leading-relaxed text-gray-400"
-            >
-              That belief drives everything I build — whether it&apos;s an
-              immersive game world that offers an escape, a web platform that
-              simplifies someone&apos;s workflow, or a piece of software that
-              quietly solves a real problem. Technology moved me when I needed it
-              most, and now I want to pay it forward through code.
-            </motion.p>
-
-            <motion.p
               {...fadeUp(0.2)}
               className="leading-relaxed text-gray-400"
             >
