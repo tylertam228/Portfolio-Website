@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
-import logoImg from "@/assets/Tiger_code.jpg";
+import logoImg from "@/assets/favicon.jpg";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
