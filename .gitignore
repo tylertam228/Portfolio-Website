@@ -32,3 +32,6 @@ dist-ssr
 
 # Drafts folder
 drafts/
+
+# Personal Certificates
+cert/

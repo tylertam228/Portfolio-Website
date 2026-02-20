@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Gamepad2, Globe, Code, Smartphone, Database, ShieldCheck, Cpu } from "lucide-react";
+import { MapPin, Gamepad2, Globe, Code, Smartphone, Database, ShieldCheck, Cpu, User } from "lucide-react";
 
 const FOCUS_AREAS = [
   { icon: Gamepad2, label: "Game Development" },
@@ -27,7 +27,8 @@ export const About = () => {
       <div className="mx-auto max-w-5xl">
         {/* Section header */}
         <motion.div {...fadeUp()} className="mb-14 text-center">
-          <span className="mt-4 inline-block rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-3xl font-bold tracking-widest text-cyan-400 uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-5 py-2 text-sm font-semibold tracking-wider text-cyan-400 uppercase shadow-lg shadow-cyan-500/5">
+            <User size={16} className="opacity-70" />
             About Me
           </span>
         </motion.div>
