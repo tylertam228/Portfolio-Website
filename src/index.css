@@ -2,14 +2,24 @@
 
 @theme {
   --color-background: #0f1418;
+  --animate-marquee: marquee 50s linear infinite;
 }
 
 @layer base {
-  html{
+  html {
     scroll-behavior: smooth;
   }
 
-  body{
+  body {
     background-color: var(--color-background);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
