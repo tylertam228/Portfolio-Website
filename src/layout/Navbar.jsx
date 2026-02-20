@@ -4,7 +4,6 @@ import logoImg from "@/assets/Tiger_code.jpg";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Tech Stack", href: "#tech-stack" },
   { label: "Projects", href: "#projects" },
   { label: "Work Experience", href: "#work-experience" },
   { label: "Education", href: "#education" },

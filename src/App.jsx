@@ -3,7 +3,6 @@ import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Education } from "@/sections/Education";
-import { TechStack } from "./sections/TechStack";
 import { Testimonials } from "@/sections/Testimonials";
 import { WorkExperience } from "@/sections/WorkExperience";
 import { Contact } from "@/sections/Contact";
@@ -15,7 +14,6 @@ function App() {
     <main>
       <Hero />
       <About />
-      <TechStack />
       <Projects />
       <WorkExperience />
       <Education />

@@ -2,7 +2,7 @@
 
 @theme {
   --color-background: #0f1418;
-  --animate-marquee: marquee 50s linear infinite;
+  --animate-marquee: marquee 25s linear infinite;
 }
 
 @layer base {

@@ -137,7 +137,11 @@
     const doubled = [...SKILLS, ...SKILLS];
 
     return (
-      <div className="relative mt-16 mx-auto w-full max-w-3xl overflow-hidden">
+      <div className="mt-16 mx-auto w-full max-w-3xl">
+        <p className="mb-4 text-center text-xl font-medium tracking-widest text-gray-500 uppercase">
+          Tech Stack
+        </p>
+        <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-background to-transparent" />
 
@@ -156,6 +160,7 @@
               {skill.name}
             </span>
           ))}
+        </div>
         </div>
       </div>
     );
