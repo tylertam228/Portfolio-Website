@@ -27,12 +27,9 @@ export const About = () => {
       <div className="mx-auto max-w-5xl">
         {/* Section header */}
         <motion.div {...fadeUp()} className="mb-14 text-center">
-          <span className="mb-3 inline-block rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-xs font-medium tracking-widest text-cyan-400 uppercase">
+          <span className="mt-4 inline-block rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-3xl font-bold tracking-widest text-cyan-400 uppercase">
             About Me
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            The Story Behind the Code
-          </h2>
         </motion.div>
 
         {/* Main content */}
@@ -48,6 +45,7 @@ export const About = () => {
               provide solace during difficult times, I&apos;m dedicated to
               crafting digital experiences that help and uplift users.
             </motion.p>
+
 
             <motion.p
               {...fadeUp(0.2)}

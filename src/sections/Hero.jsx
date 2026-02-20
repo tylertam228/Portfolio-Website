@@ -57,6 +57,7 @@
     { name: "Godot", icon: `${DEVICON}/godot/godot-original.svg` },
     { name: "Supabase", icon: `${DEVICON}/supabase/supabase-original.svg` },
     { name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
+    { name: "Java", icon: `${DEVICON}/java/java-original.svg` }
   ];
 
   const SPEECH_LINES = [
@@ -112,7 +113,7 @@
 
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.8 }}
         className="absolute -top-1 left-1/2 -translate-x-1/2 sm:-top-1 z-20"
