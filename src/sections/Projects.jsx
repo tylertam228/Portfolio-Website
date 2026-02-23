@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronLeft,
@@ -7,11 +7,14 @@ import {
   ExternalLink,
   WifiOff,
   Rocket,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import imgDragonBid from "@/assets/DragonBid.jpg";
 import imgPulse from "@/assets/PulseDetectorArduino.jpeg";
 import imgWordle from "@/assets/Wordle.webp";
 import imgGreninja from "@/assets/greninja.jpg";
+import imgAIChatbot from "@/assets/AIChatbot.png";
 
 const PROJECTS = [
   {
@@ -59,6 +62,18 @@ const PROJECTS = [
     live: null,
     offline: null,
   },
+  {
+    title: "Portfolio AI Assistant",
+    subtitle: "RAG-Powered Conversational Chatbot",
+    tech: ["Python", "Google Gemini API", "FastAPI", "LangChain", "ChromaDB"],
+    description:
+      "Developed a conversational AI chatbot integrated as a plugin into a personal portfolio website to interactively answer visitor questions about personal background, skills, and experience. Built a FastAPI backend served with Uvicorn, leveraging Google Gemini API for natural language generation and LangChain for orchestrating a Retrieval-Augmented Generation (RAG) pipeline with ChromaDB as the vector database for efficient context retrieval. Designed a responsive, real-time chat interface using Next.js, TypeScript, and Tailwind CSS.",
+    image: imgAIChatbot,
+    github:
+      "https://github.com/tylertam228/Personal-AI-Chatbot",
+    live: "https://ai.tyhstudio.com",
+    offline: null,
+  }
 ];
 
 const CARD_COUNT = PROJECTS.length;
@@ -89,13 +104,18 @@ function getCardStyle(index, active) {
 }
 
 function ProjectCard({ project, isActive }) {
+  const [expanded, setExpanded] = useState(false);
+
+  const descriptionLength = project.description?.length || 0;
+  const needsExpand = descriptionLength > 200;
+
   return (
     <div
-      className={`flex h-[480px] w-[320px] flex-col rounded-2xl border bg-gray-900/70 backdrop-blur-sm overflow-hidden transition-colors duration-500 ${
+      className={`flex w-[320px] flex-col rounded-2xl border bg-gray-900/70 backdrop-blur-sm overflow-hidden transition-all duration-500 ${
         isActive
           ? "border-gray-600/60 shadow-2xl shadow-black/40"
           : "border-gray-800/40"
-      }`}
+      } ${expanded ? "h-auto min-h-[480px]" : "h-[480px]"}`}
     >
       {/* Project image */}
       <div className="relative h-44 w-full shrink-0 overflow-hidden">
@@ -121,9 +141,33 @@ function ProjectCard({ project, isActive }) {
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-lg font-bold text-white">{project.title}</h3>
         <p className="mt-0.5 text-xs text-gray-500">{project.subtitle}</p>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-400 line-clamp-5">
-          {project.description}
-        </p>
+        <div className="mt-3 flex-1">
+          <p
+            className={`text-sm leading-relaxed text-gray-400 ${
+              expanded ? "" : "line-clamp-5"
+            }`}
+          >
+            {project.description}
+          </p>
+          {needsExpand && isActive && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-cyan-400 transition-colors hover:text-cyan-300"
+            >
+              {expanded ? (
+                <>
+                  <ChevronUp size={14} />
+                  Show Less
+                </>
+              ) : (
+                <>
+                  <ChevronDown size={14} />
+                  Read More
+                </>
+              )}
+            </button>
+          )}
+        </div>
 
         {/* Action buttons */}
         <div className="mt-4 flex items-center gap-2">
@@ -164,9 +208,23 @@ function ProjectCard({ project, isActive }) {
 export const Projects = () => {
   const [active, setActive] = useState(0);
 
-  const prev = () =>
-    setActive((v) => (v - 1 + CARD_COUNT) % CARD_COUNT);
-  const next = () => setActive((v) => (v + 1) % CARD_COUNT);
+  const prev = useCallback(() =>
+    setActive((v) => (v - 1 + CARD_COUNT) % CARD_COUNT), []);
+  const next = useCallback(() => 
+    setActive((v) => (v + 1) % CARD_COUNT), []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") {
+        prev();
+      } else if (e.key === "ArrowRight") {
+        next();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [prev, next]);
 
   return (
     <section id="projects" className="relative py-24 px-6 overflow-hidden">
