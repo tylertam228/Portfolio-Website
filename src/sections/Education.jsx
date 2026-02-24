@@ -45,6 +45,7 @@ const CUHK_IN_PROGRESS = [
 
 const CUHK_ACTIVITIES = [
   "Member of the 46th Cabinet of Computer Science Society",
+  "Awarded with Li Dak Sum Yip Yio Chin Kenneth Li Scholarship 2023/24"
 ];
 
 const DSE_RESULTS = [
