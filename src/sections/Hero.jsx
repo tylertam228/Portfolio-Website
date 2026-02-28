@@ -138,35 +138,107 @@
     );
   }
 
+  const BASE_SPEED = 1.5;
+  const FAST_SPEED = 3.5;
+
   function SkillMarquee() {
     const doubled = [...SKILLS, ...SKILLS];
+    const trackRef = useRef(null);
+    const offsetRef = useRef(0);
+    const rafRef = useRef(null);
+    const speedRef = useRef(BASE_SPEED);
+    const pausedRef = useRef(false);
+    const [paused, setPaused] = useState(false);
+
+    const handleMouseMove = useCallback((e) => {
+      if (pausedRef.current) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const ratio = (e.clientX - rect.left) / rect.width;
+      if (ratio < 0.35) {
+        speedRef.current = -FAST_SPEED * (1 - ratio / 0.35);
+      } else if (ratio > 0.65) {
+        speedRef.current = FAST_SPEED * ((ratio - 0.65) / 0.35);
+      } else {
+        speedRef.current = BASE_SPEED;
+      }
+    }, []);
+
+    const handleMouseLeave = useCallback(() => {
+      if (!pausedRef.current) {
+        speedRef.current = BASE_SPEED;
+      }
+    }, []);
+
+    const handleClick = useCallback(() => {
+      pausedRef.current = !pausedRef.current;
+      setPaused(pausedRef.current);
+      if (!pausedRef.current) {
+        speedRef.current = BASE_SPEED;
+      }
+    }, []);
+
+    useEffect(() => {
+      const track = trackRef.current;
+      if (!track) return;
+
+      const animate = () => {
+        if (!pausedRef.current) {
+          const halfWidth = track.scrollWidth / 2;
+          offsetRef.current -= speedRef.current;
+          if (offsetRef.current <= -halfWidth) {
+            offsetRef.current += halfWidth;
+          } else if (offsetRef.current > 0) {
+            offsetRef.current -= halfWidth;
+          }
+          track.style.transform = `translateX(${offsetRef.current}px)`;
+        }
+        rafRef.current = requestAnimationFrame(animate);
+      };
+
+      rafRef.current = requestAnimationFrame(animate);
+      return () => cancelAnimationFrame(rafRef.current);
+    }, []);
 
     return (
       <div className="mt-16 mx-auto w-full max-w-3xl">
         <p className="mb-4 text-center text-xl font-medium tracking-widest text-gray-500 uppercase">
           Tech Stack
         </p>
-        <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-background to-transparent" />
+        <div
+          className="relative overflow-hidden"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-background to-transparent" />
 
-        <div className="animate-marquee flex w-max gap-4">
-          {doubled.map((skill, i) => (
-            <span
-              key={`${skill.name}-${i}`}
-              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-gray-700/30 bg-gray-800/25 px-4 py-2 text-sm text-gray-500/70 backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40 hover:text-gray-200 hover:bg-gray-800/50"
-            >
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="h-4 w-4 opacity-50 transition-opacity duration-300 group-hover:opacity-100"
-                loading="lazy"
-              />
-              {skill.name}
-            </span>
-          ))}
+          <div ref={trackRef} className="flex w-max gap-4">
+            {doubled.map((skill, i) => (
+              <span
+                key={`${skill.name}-${i}`}
+                onClick={handleClick}
+                className={`inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm backdrop-blur-sm transition-all duration-300 ${
+                  paused
+                    ? "border-cyan-500/40 text-gray-200 bg-gray-800/50"
+                    : "border-gray-700/30 bg-gray-800/25 text-gray-500/70 hover:border-cyan-500/40 hover:text-gray-200 hover:bg-gray-800/50"
+                }`}
+              >
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className={`h-4 w-4 transition-opacity duration-300 ${paused ? "opacity-100" : "opacity-50"}`}
+                  loading="lazy"
+                />
+                {skill.name}
+              </span>
+            ))}
+          </div>
         </div>
-        </div>
+        {paused && (
+          <p className="mt-2 text-center text-xs text-gray-600 animate-pulse">
+            Click any skill to resume scrolling
+          </p>
+        )}
       </div>
     );
   }
