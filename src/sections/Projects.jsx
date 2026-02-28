@@ -15,6 +15,7 @@ import imgPulse from "@/assets/PulseDetectorArduino.jpeg";
 import imgWordle from "@/assets/Wordle.webp";
 import imgGreninja from "@/assets/greninja.jpg";
 import imgAIChatbot from "@/assets/AIChatbot.png";
+import imgHKWeather from "@/assets/weather.png";
 
 const PROJECTS = [
   {
@@ -72,6 +73,17 @@ const PROJECTS = [
     github:
       "https://github.com/tylertam228/Personal-AI-Chatbot",
     live: "https://ai.tyhstudio.com",
+    offline: null,
+  },
+  {
+    title: "HK-Weather App",
+    subtitle: "Weather App using Django with data.gov.hk API",
+    tech: ["Python", "Django", "data.gov.hk API"],
+    description:
+      "A weather app built with Django, providing real-time weather information for Hong Kong using the data.gov.hk API.",
+    image: imgHKWeather,
+    github: "https://github.com/tylertam228/Weather-App",
+    live: "https://hkweather.tyhstudio.com",
     offline: null,
   }
 ];
