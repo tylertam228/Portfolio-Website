@@ -62,6 +62,7 @@
     { name: "Java", icon: `${DEVICON}/java/java-original.svg` },
     { name: "Boostrap", icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
     { name: "Flask", icon: `${DEVICON}/flask/flask-original.svg` },
+    { name: "Django", icon: `${DEVICON}/django/django-original.svg` },
   ];
 
   const SPEECH_LINES = [
