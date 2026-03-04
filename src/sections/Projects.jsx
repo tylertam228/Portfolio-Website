@@ -16,6 +16,7 @@ import imgWordle from "@/assets/Wordle.webp";
 import imgGreninja from "@/assets/greninja.jpg";
 import imgAIChatbot from "@/assets/AIChatbot.png";
 import imgHKWeather from "@/assets/weather.png";
+import imgPasswordGenerator from "@/assets/passwordforge.png";
 
 const PROJECTS = [
   {
@@ -85,6 +86,17 @@ const PROJECTS = [
     github: "https://github.com/tylertam228/Weather-App",
     live: "https://hkweather.tyhstudio.com",
     offline: null,
+  },
+  {
+  title: "Password Generator",
+  subtitle: "Password Generator using C# with .ASP.NET Core",
+  tech: ["C#", ".ASP.NET Core"],
+  description:
+    "A password generator built with C# and .ASP.NET Core, providing a random password based on the user's input.",
+  image: imgPasswordGenerator,
+  github: "https://github.com/tylertam228/Password-Generator-with-C-Sharp",
+  live: "https://passwordforge.tyhstudio.com",
+  offline: null,
   }
 ];
 
