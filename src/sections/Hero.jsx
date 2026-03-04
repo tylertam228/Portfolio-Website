@@ -37,33 +37,52 @@
   ];
 
   const SKILLS = [
-    { name: "React", icon: `${DEVICON}/react/react-original.svg` },
-    { name: "Unity", icon: `${DEVICON}/unity/unity-original.svg` },
-    { name: "C#", icon: `${DEVICON}/csharp/csharp-original.svg` },
-    { name: "JavaScript", icon: `${DEVICON}/javascript/javascript-original.svg` },
-    { name: "TypeScript", icon: `${DEVICON}/typescript/typescript-original.svg` },
-    { name: "Node.js", icon: `${DEVICON}/nodejs/nodejs-original.svg` },
-    { name: "Tailwind CSS", icon: `${DEVICON}/tailwindcss/tailwindcss-original.svg` },
-    { name: "Python", icon: `${DEVICON}/python/python-original.svg` },
-    { name: "Git", icon: `${DEVICON}/git/git-original.svg` },
-    { name: "HTML", icon: `${DEVICON}/html5/html5-original.svg` },
-    { name: "CSS", icon: `${DEVICON}/css3/css3-original.svg` },
-    { name: "Vite", icon: `${DEVICON}/vitejs/vitejs-original.svg` },
-    { name: "Next.js", icon: `${DEVICON}/nextjs/nextjs-original.svg` },
-    { name: "PostgreSQL", icon: `${DEVICON}/postgresql/postgresql-original.svg` },
-    { name: "C++", icon: `${DEVICON}/cplusplus/cplusplus-original.svg` },
-    { name: "Android Studio", icon: `${DEVICON}/androidstudio/androidstudio-original.svg` },
-    { name: "C", icon: `${DEVICON}/c/c-original.svg` },
-    { name: "Docker", icon: `${DEVICON}/docker/docker-original.svg` },
-    { name: "Arduino", icon: `${DEVICON}/arduino/arduino-original.svg` },
-    { name: "Godot", icon: `${DEVICON}/godot/godot-original.svg` },
-    { name: "Supabase", icon: `${DEVICON}/supabase/supabase-original.svg` },
-    { name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
-    { name: "Java", icon: `${DEVICON}/java/java-original.svg` },
-    { name: "Boostrap", icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
-    { name: "Flask", icon: `${DEVICON}/flask/flask-original.svg` },
-    { name: "Django", icon: `${DEVICON}/django/django-plain.svg` },
-  ];
+      // Programming Languages
+      { name: "C", icon: `${DEVICON}/c/c-original.svg` },
+      { name: "C++", icon: `${DEVICON}/cplusplus/cplusplus-original.svg` },
+      { name: "C#", icon: `${DEVICON}/csharp/csharp-original.svg` },
+      { name: "Java", icon: `${DEVICON}/java/java-original.svg` },
+      { name: "JavaScript", icon: `${DEVICON}/javascript/javascript-original.svg` },
+      { name: "TypeScript", icon: `${DEVICON}/typescript/typescript-original.svg` },
+      { name: "Python", icon: `${DEVICON}/python/python-original.svg` },
+      { name: "Ruby", icon: `${DEVICON}/ruby/ruby-original.svg` },
+      { name: "HTML", icon: `${DEVICON}/html5/html5-original.svg` },
+      { name: "CSS", icon: `${DEVICON}/css3/css3-original.svg` },
+    
+      // Frameworks / Libraries
+      { name: "React", icon: `${DEVICON}/react/react-original.svg` },
+      { name: "Next.js", icon: `${DEVICON}/nextjs/nextjs-original.svg` },
+      { name: "Node.js", icon: `${DEVICON}/nodejs/nodejs-original.svg` },
+      { name: "Express.js", icon: `${DEVICON}/express/express-original.svg` },
+      { name: "discord.js", icon: `${DEVICON}/discordjs/discordjs-original.svg` },
+      { name: "FastAPI", icon: `${DEVICON}/fastapi/fastapi-original.svg` },
+      { name: ".NET Core", icon: `${DEVICON}/dotnetcore/dotnetcore-original.svg` },
+      { name: "Django", icon: `${DEVICON}/django/django-plain.svg` },
+      { name: "Flask", icon: `${DEVICON}/flask/flask-original.svg` },
+      { name: "Ruby on Rails", icon: `${DEVICON}/rails/rails-original-wordmark.svg` },
+      { name: "Tailwind CSS", icon: `${DEVICON}/tailwindcss/tailwindcss-original.svg` },
+      { name: "Boostrap", icon: `${DEVICON}/bootstrap/bootstrap-original.svg` },
+      { name: "Vite", icon: `${DEVICON}/vitejs/vitejs-original.svg` },
+    
+      // Databases
+      { name: "PostgreSQL", icon: `${DEVICON}/postgresql/postgresql-original.svg` },
+      { name: "MongoDB", icon: `${DEVICON}/mongodb/mongodb-original.svg` },
+      { name: "Supabase", icon: `${DEVICON}/supabase/supabase-original.svg` },
+    
+      // Game Engines
+      { name: "Unity", icon: `${DEVICON}/unity/unity-original.svg` },
+      { name: "Godot", icon: `${DEVICON}/godot/godot-original.svg` },
+    
+      // Mobile Development
+      { name: "Android Studio", icon: `${DEVICON}/androidstudio/androidstudio-original.svg` },
+    
+      // Others / Tools
+      { name: "Git", icon: `${DEVICON}/git/git-original.svg` },
+      { name: "npm", icon: `${DEVICON}/npm/npm-original-wordmark.svg` },
+      { name: "Docker", icon: `${DEVICON}/docker/docker-original.svg` },
+      { name: "Nginx", icon: `${DEVICON}/nginx/nginx-original.svg` },
+      { name: "Arduino", icon: `${DEVICON}/arduino/arduino-original.svg` },
+    ];
 
   const SPEECH_LINES = [
     "Browse at your leisure~",
